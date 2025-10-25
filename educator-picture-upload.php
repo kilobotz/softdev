@@ -53,3 +53,5 @@ if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile)) {
 $stmt->close();
 $conn->close();
 ?>
+
+
