@@ -73,7 +73,7 @@ $groups = $conn->query("SELECT * FROM groups WHERE teacher_id = $teacher_id");
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Group Management | Class Records</title>
-  <link rel="stylesheet" href="style2.css" />
+  <link rel="stylesheet" href="css/style2.css" />
 </head>
 <body>
   <!-- HEADER -->
