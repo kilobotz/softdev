@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Choose Role | Class Records</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="choose-role.css">
+</head>
+<body>
+    <div class="role-popup">
+        <div class="popup-box">
+            <h2>Choose Your Role</h2>
+            <p>Please select your role below:</p>
+
+            <div class="buttons">
+                <button id="studentBtn">Student</button>
+                <button id="teacherBtn">Teacher</button>
+            </div>
+
+            <div id="teacherPasswordBox" class="hidden">
+                <p>Enter teacher access code:</p>
+                <input type="password" id="teacherCode" placeholder="Enter code...">
+                <button id="confirmTeacher">Confirm</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const studentBtn = document.getElementById('studentBtn');
+        const teacherBtn = document.getElementById('teacherBtn');
+        const teacherBox = document.getElementById('teacherPasswordBox');
+        const confirmTeacher = document.getElementById('confirmTeacher');
+
+        studentBtn.addEventListener('click', () => {
+            window.location.href = 'set-role.php?role=student';
+        });
+
+        teacherBtn.addEventListener('click', () => {
+            teacherBox.classList.remove('hidden');
+        });
+
+        confirmTeacher.addEventListener('click', () => {
+            const code = document.getElementById('teacherCode').value;
+            if (code === '123456789') {
+                window.location.href = 'set-role.php?role=teacher';
+            } else {
+                alert('Invalid teacher access code.');
+            }
+        });
+    </script>
+</body>
+</html>

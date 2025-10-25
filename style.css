@@ -1,0 +1,782 @@
+:root {
+	--bg: #F0FCFF;
+	--light-blue: #5ABAFF;
+	--deep-blue: #2058FF;
+	--yellow: #FFE672;
+	--orange: #FFB300;
+
+	--card-radius: 16px;
+	--input-radius: 14px;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Body */
+body {
+	font-family: "Montserrat", sans-serif;
+	background: var(--bg);
+	color: var(--deep-blue);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header */
+.site-header {
+	background: var(--deep-blue);
+	color: white;
+	padding: 18px 40px;
+	font-family: "Playfair Display", serif;
+	box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.05);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+/* logo + brand wrapper */
+.brand-container {
+	display: flex;
+	align-items: center;
+	gap: 16px;
+}
+
+/* logo image */
+.site-logo {
+	height: 60px;
+	width: auto;
+	object-fit: contain;
+}
+
+/* brand text */
+.brand {
+	font-size: 36px;
+	letter-spacing: 0.5px;
+}
+
+
+
+/* main layout */
+.login-section {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	padding: 60px 80px;
+	gap: 60px;
+	flex-wrap: wrap;
+}
+
+/* Left side */
+.welcome {
+	flex: 1 1 40%;
+	color: black;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.welcome h2 {
+	font-family: "Playfair Display", serif;
+	font-size: 40px;
+	margin-bottom: 20px;
+	line-height: 1.2;
+}
+
+.welcome p {
+	font-size: 20px;
+	margin: 15px;
+	color: black;
+	line-height: 1.6;
+}
+
+.studAcc {
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	gap: 0;
+	position: relative;
+	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
+	z-index: 10; /* ensure it's on top of other content */
+}
+
+/* circular icon */
+.icon1 {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2058FF;
+	border-radius: 50%;
+	overflow: hidden; /* ensures no cutting or overflow */
+	z-index: 2;
+}
+
+.icon1 img {
+	width: 60%;
+	height: 60%;
+	object-fit: contain;
+}
+
+/* pill (label) */
+.studAcc__pill {
+	background-color: #5ABAFF;
+	border-radius: 14px;
+	padding: 1px 28px 1px 46px;
+	margin-left: -30px;
+	display: flex;
+	align-items: center; /* center text vertically */
+	z-index: 1;
+}
+
+/* label text */
+.studAcc__text {
+	color: white !important; /* force white color */
+	font-weight: 700;
+	font-size: 30px;
+	letter-spacing: 0.1px;
+	font-family: "Montserrat", sans-serif;
+	margin: 0;
+	padding-left: 6px;
+}
+
+.signup-text {
+	margin-top: 40px;
+	font-size: 15px;
+}
+.signup-text a {
+	color: #ECA600;
+	font-weight: 600;
+	text-decoration: underline;
+}
+
+/* Right side form */
+.login-form {
+	flex: 1 1 40%;
+	background: #fff;
+	border-radius: var(--card-radius);
+	padding: 40px 50px;
+	box-shadow: 0 8px 18px rgba(33,75,155,0.12);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.form-title {
+	font-family: "Playfair Display", serif;
+	font-size: 32px;
+	color: #123572;
+	margin-bottom: 30px;
+}
+
+/* Input styling */
+.field-label {
+	font-size: 14px;
+	margin-bottom: 8px;
+	color: #0b2e4b;
+}
+
+.loginicon {
+	display: flex;
+	align-items: center;
+	background: var(--deep-blue);
+	border-radius: var(--input-radius);
+	padding: 12px 16px;
+	box-shadow: inset 0 -6px 10px rgba(0,0,0,0.12), 0 6px 0 rgba(0,0,0,0.06);
+	margin-bottom: 22px;
+}
+
+.icon {
+	margin-right: 12px;
+	background: rgba(255,255,255,0.08);
+	border-radius: 8px;
+	padding: 6px;
+}
+
+.text-input {
+	flex: 1;
+	border: none;
+	background: transparent;
+	color: #EAF6FF;
+	font-size: 15px;
+	outline: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+.text-input::placeholder {
+	color: rgba(234,246,255,0.7);
+}
+
+/* Actions */
+.form-actions {
+	display: flex;
+	flex-direction: column;   
+	align-items: stretch;     
+	gap: 12px;                
+	margin-top: 10px;
+}
+
+
+.forgot {
+	font-size: 14px;
+	color: #123572;
+	text-decoration: underline;
+	text-align: center;
+	margin-top: 15px;
+}
+
+.btn.next {
+	background: var(--yellow);
+	color: #1b2b40;
+	font-weight: 600;
+	padding: 12px 28px;
+	border-radius: 16px;
+	box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+	border: none;
+	cursor: pointer;
+	transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+.btn.next:hover {
+	transform: translateY(-4px);
+	box-shadow: 0 10px 0 rgba(0,0,0,0.12);
+}
+.btn.next:active {
+	transform: translateY(2px);
+	box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+}
+
+/* Footer */
+.site-footer {
+	height: 72px;
+	background: var(--deep-blue);
+	margin-top: auto;
+}
+
+.footer_copyright {
+	color: white;
+	text-align: center;
+	margin-top: 25px;
+}
+
+:root {
+	--bg: #F0FCFF;
+	--light-blue: #5ABAFF;
+	--deep-blue: #2058FF;
+	--yellow: #FFE672;
+	--orange: #FFB300;
+	--card-radius: 16px;
+	--input-radius: 14px;
+}
+
+/* Reset */
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/* Body */
+body {
+	font-family: "Montserrat", sans-serif;
+	background: var(--bg);
+	color: var(--deep-blue);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header */
+.site-header {
+	background: var(--deep-blue);
+	color: white;
+	padding: 18px 40px;
+	font-family: "Playfair Display", serif;
+	font-size: 36px;
+	box-shadow: inset 0 -3px 0 rgba(0,0,0,0.05);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+
+.brand {
+	letter-spacing: .5px;
+}
+
+/* Main layout */
+.login-section {
+	display: flex;
+	justify-content: center;
+	align-items: stretch;
+	padding: 60px 80px;
+	gap: 60px;
+	flex-wrap: wrap;
+}
+
+/* Left side */
+.welcome {
+	flex: 1 1 40%;
+	color: black;
+	padding: 50px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+	.welcome h2 {
+		font-family: "Playfair Display", serif;
+		font-size: 40px;
+		margin-bottom: 20px;
+		line-height: 1.2;
+	}
+
+	.welcome p {
+		font-size: 20px;
+		margin: 15px 0;
+		color: black;
+		line-height: 1.6;
+	}
+
+/* STUDENT ACCOUNT (badge) */
+.studAcc {
+	color: white;
+	display: inline-flex;
+	align-items: center;
+	gap: 0;
+	position: relative;
+	font-family: "Montserrat", sans-serif;
+	cursor: pointer;
+	z-index: 10; /* ensure it's on top of other content */
+}
+
+/* circular icon */
+.icon1 {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: #2058FF;
+	border-radius: 50%;
+	overflow: hidden; /* ensures no cutting or overflow */
+	z-index: 2;
+	transform: translateX(10px);
+}
+
+	.icon1 img {
+		width: 60%;
+		height: 60%;
+		object-fit: contain;
+		display: block;
+	}
+
+/* pill (label) */
+.studAcc__pill {
+	background-color: #5ABAFF;
+	border-radius: 14px;
+	padding: 1px 28px 1px 46px;
+	margin-left: -30px;
+	display: flex;
+	align-items: center; /* center text vertically */
+	z-index: 1;
+}
+
+/* label text */
+.studAcc__text {
+	color: white !important; /* force white color */
+	font-weight: 700;
+	font-size: 30px;
+	letter-spacing: 0.1px;
+	font-family: "Montserrat", sans-serif;
+	margin: 0;
+	padding-left: 6px;
+}
+
+/* small signup text under welcome */
+.signup-text {
+	margin-top: 40px;
+	font-size: 15px;
+}
+
+	.signup-text a {
+		color: #ECA600;
+		font-weight: 600;
+		text-decoration: underline;
+	}
+
+/* Right side form */
+.login-form {
+	flex: 1 1 40%;
+	background: #fff;
+	border-radius: var(--card-radius);
+	padding: 40px 50px;
+	box-shadow: 0 8px 18px rgba(33,75,155,0.12);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-width: 320px;
+}
+
+.form-title {
+	font-family: "Playfair Display", serif;
+	font-size: 32px;
+	color: #123572;
+	margin-bottom: 30px;
+}
+
+/* Input styling */
+.field-label {
+	font-size: 14px;
+	margin-bottom: 8px;
+	color: #0b2e4b;
+}
+
+.loginicon {
+	display: flex;
+	align-items: center;
+	background: var(--deep-blue);
+	border-radius: var(--input-radius);
+	padding: 12px 16px;
+	box-shadow: inset 0 -6px 10px rgba(0,0,0,0.12), 0 6px 0 rgba(0,0,0,0.06);
+	margin-bottom: 22px;
+}
+
+.icon {
+	margin-right: 12px;
+	background: rgba(255,255,255,0.08);
+	border-radius: 8px;
+	padding: 6px;
+}
+
+.text-input {
+	flex: 1;
+	border: none;
+	background: transparent;
+	color: #EAF6FF;
+	font-size: 15px;
+	outline: none;
+	font-family: "Montserrat", sans-serif;
+}
+
+	.text-input::placeholder {
+		color: rgba(234,246,255,0.7);
+	}
+
+/* Actions */
+.form-actions {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 12px;
+	margin-top: 10px;
+}
+
+.forgot {
+	font-size: 14px;
+	color: #123572;
+	text-decoration: underline;
+}
+
+.btn.next {
+	background: var(--yellow);
+	color: #1b2b40;
+	font-weight: 600;
+	padding: 12px 28px;
+	border-radius: 16px;
+	box-shadow: 0 6px 0 rgba(0,0,0,0.12);
+	border: none;
+	cursor: pointer;
+	transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+	.btn.next:hover {
+		transform: translateY(-4px);
+		box-shadow: 0 10px 0 rgba(0,0,0,0.12);
+	}
+
+	.btn.next:active {
+		transform: translateY(2px);
+		box-shadow: 0 3px 0 rgba(0,0,0,0.12);
+	}
+
+/* Footer */
+.site-footer {
+	height: 72px;
+	background: var(--deep-blue);
+	margin-top: auto;
+}
+
+/* ========== RESPONSIVE: tablet / mobile ========== */
+
+/* Wide tablets / small desktops */
+
+@media (max-width: 768px) {
+	.site-header {
+		padding: 12px 24px;
+	}
+
+	.site-logo {
+		height: 48px; /* slightly smaller logo */
+	}
+
+	.brand {
+		font-size: 28px;
+	}
+}
+
+@media (max-width: 480px) {
+	.site-header {
+		flex-direction: column;
+		justify-content: center;
+		text-align: center;
+		gap: 8px;
+	}
+
+	.brand-container {
+		flex-direction: column;
+		gap: 6px;
+		display: flex;
+		flex-direction: row;
+	}
+
+	.site-logo {
+		height: 40px;
+	}
+
+	.brand {
+		font-size: 24px;
+	}
+}
+
+@media (max-width: 992px) {
+	.site-header {
+		padding: 14px 28px;
+		font-size: 28px;
+	}
+
+	.login-section {
+		padding: 40px 40px;
+		gap: 36px;
+	}
+
+	.welcome {
+		padding: 20px;
+		margin: 2vw;
+		gap: 25px;
+	}
+
+		.welcome h2 {
+			font-size: 34px;
+		}
+
+		.welcome p {
+			font-size: 18px;
+			margin: 12px 0;
+		}
+
+	.icon1 {
+		width: 84px;
+		height: 84px;
+		transform: translateX(8px);
+	}
+
+		.icon1 img {
+			width: 64%;
+			height: 64%;
+		}
+
+	.studAcc__pill {
+		padding: 6px 24px 6px 48px;
+		margin-left: -26px;
+	}
+
+	.studAcc__text {
+		font-size: 26px;
+	}
+
+	.login-form {
+		padding: 30px 36px;
+	}
+
+	.form-title {
+		font-size: 28px;
+	}
+
+	.text-input {
+		font-size: 14px;
+	}
+}
+
+/* Narrow tablets and large phones: stack vertically and center */
+@media (max-width: 768px) {
+	.login-section {
+		flex-direction: column;
+		padding: 28px 24px;
+		align-items: center;
+	}
+
+	.welcome, .login-form {
+		flex: 0 0 auto;
+		width: 100%;
+		padding: 20px;
+	}
+
+	/* Welcome tweaks */
+	.welcome {
+		align-items: center;
+		text-align: center;
+		padding-top: 8px;
+		padding-bottom: 8px;
+	}
+
+		.welcome h2 {
+			font-size: 28px;
+			margin-bottom: 8px;
+		}
+
+		.welcome p {
+			font-size: 16px;
+			margin: 8px 0 16px;
+		}
+
+	/* Student badge becomes stacked to avoid overlap */
+	.studAcc {
+		flex-direction: row;
+		align-items: center;
+		gap: 20px;
+	}
+
+	.icon1 {
+		width: 90px;
+		height: 90px;
+		transform: none;
+		margin-bottom: 6px;
+	}
+
+	.studAcc__pill {
+		margin-left: 0;
+		padding: 10px 22px;
+		border-radius: 12px;
+	}
+
+	.studAcc__text {
+		font-size: 22px;
+	}
+
+	/* Login form expands full width and becomes shorter */
+	.login-form {
+		width: 100%;
+		max-width: 520px;
+		border-radius: 14px;
+		padding: 22px;
+		box-shadow: 0 8px 28px rgba(33,75,155,0.08);
+	}
+
+	.form-title {
+		font-size: 24px;
+		text-align: left;
+	}
+
+	.loginicon {
+		padding: 10px 12px;
+	}
+
+	.text-input {
+		font-size: 15px;
+	}
+
+	.btn.next {
+		padding: 12px 20px;
+		border-radius: 14px;
+	}
+
+	.forgot {
+		align-self: center;
+	}
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+	.site-header {
+		padding: 12px 16px;
+		font-size: 20px;
+	}
+
+	.login-section {
+		padding: 18px 14px;
+		gap: 18px;
+		margin-right: 10px;
+	}
+
+	.welcome {
+		padding: 12px;
+		gap: 10px;
+	}
+
+		.welcome h2 {
+			font-size: 20px;
+		}
+
+		.welcome p {
+			font-size: 14px;
+			margin: 8px 0 12px;
+		}
+
+	.icon1 {
+		width: 70px;
+		height: 70px;
+	}
+
+		.icon1 img {
+			width: 62%;
+			height: 62%;
+		}
+
+	.studAcc__pill {
+		padding: 8px 18px;
+		border-radius: 10px;
+	}
+
+	.studAcc__text {
+		font-size: 18px;
+	}
+
+	.login-form {
+		padding: 18px;
+		width: 100%;
+		max-width: 420px;
+	}
+
+	.form-title {
+		font-size: 20px;
+		text-align: center;
+	}
+
+	.text-input {
+		font-size: 14px;
+		padding: 10px;
+	}
+
+	.btn.next {
+		padding: 10px 16px;
+		font-size: 15px;
+		border-radius: 12px;
+	}
+
+	.forgot {
+		font-size: 13px;
+	}
+
+	/* make sure footer doesn't crowd */
+	.site-footer {
+		height: 64px;
+	}
+}
+
+/* Utility tweaks to prevent overflow issues */
+img {
+	max-width: 100%;
+	display: block;
+}

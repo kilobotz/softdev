@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Class Record | My Groups</title>
+
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="style2.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="brand-container">
+			<img src="Logo.png" alt="Logo" class="site-logo">
+			<div class="brand">Class Records</div>
+		</div>
+	</header>
+
+	<main class="group-section">
+		<div class="intro">
+			<h2>My Groups</h2>
+			<p>View your group details and teammates for each class.</p>
+		</div>
+
+		<section class="student-group-list">
+			<div class="group-card">
+				<h4>Group Alpha</h4>
+				<p><strong>Course:</strong> IT 210 - Web Systems</p>
+				<p><strong>Leader:</strong> 99-0001 (Maria Dela Cruz)</p>
+				<p><strong>Members:</strong> 99-0001, 99-0002, 99-0003</p>
+				<div class="actions">
+					<button class="btn view-btn" onclick="viewDetails('Alpha')">View Details</button>
+					<button class="btn leave-btn" onclick="leaveGroup('Alpha')">Leave Group</button>
+				</div>
+			</div>
+
+			<div class="group-card">
+				<h4>Group Beta</h4>
+				<p><strong>Course:</strong> IT 205 - Database Management</p>
+				<p><strong>Leader:</strong> 99-0004 (John Santos)</p>
+				<p><strong>Members:</strong> 99-0004, 99-0005</p>
+				<div class="actions">
+					<button class="btn view-btn" onclick="viewDetails('Beta')">View Details</button>
+					<button class="btn leave-btn" onclick="leaveGroup('Beta')">Leave Group</button>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer"> 
+		<div class="footer_copyright">Class Records &#xA9; 2025</div>
+	</footer>
+
+<!-- FOR PHP 
+	<script>
+		function viewDetails(groupName) {
+			alert("Viewing details for " + groupName + "...");
+			window.location.href = "group-details.php?group=" + encodeURIComponent(groupName);
+		}
+
+		function leaveGroup(groupName) {
+			if (confirm("Are you sure you want to leave " + groupName + "?")) {
+				alert("You have left " + groupName + ".");
+			}
+		}
+	</script>
+-->
+</body>
+</html>

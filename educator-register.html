@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Class Record | Educator Registration</title>
+	
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+	
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="educator-register.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="brand">Class Records</div>
+	</header>
+	
+	<main class="page">
+		<h1 class="page-title">Registration Form</h1>
+		
+		<!-- ✅ Fixed: Removed enctype (no file upload here), and corrected submit button -->
+		<form class="registration-card" id="educatorForm" action="educator-register.php" method="POST" autocomplete="off">
+			
+			<!-- Educator Information -->
+			<section class="card-section">
+				<h2 class="section-title">Educator Information</h2>
+				
+				<div class="row row-3">
+					<label class="field">
+						<span class="field-label">Enter your First Name</span>
+						<div class="input-with-icon">
+							<span class="icon">
+								<img src="img/Icon Person.png" alt="icon">
+							</span>
+							<input class="text-input" name="firstName" type="text" placeholder="First Name" required>
+						</div>
+					</label>
+					
+					<label class="field">
+						<span class="field-label">Enter your Last Name</span>
+						<div class="input-with-icon">
+							<span class="icon">
+								<img src="img/Icon Person.png" alt="icon">
+							</span>
+							<input class="text-input" name="lastName" type="text" placeholder="Last Name" required>
+						</div>
+					</label>
+					
+					<label class="field">
+						<span class="field-label">Enter your Middle Initial</span>
+						<div class="input-with-icon small">
+							<span class="icon">
+								<img src="img/Icon Person.png" alt="icon">
+							</span>
+							<input class="text-input" name="middleInitial" type="text" placeholder="M.I." maxlength="2">
+						</div>
+					</label>
+				</div>
+				
+				<label class="field full-width">
+					<span class="field-label">Enter your ID Number</span>
+					<div class="input-with-icon">
+						<span class="icon">
+							<img src="img/Icon Person.png" alt="icon">
+						</span>
+						<input class="text-input" name="idNumber" type="text" placeholder="e.g. 23-1234" required>
+					</div>
+				</label>
+			</section>
+			
+			<!-- Account Credentials -->
+			<section class="card-section">
+				<h2 class="section-title">Account Credentials</h2>
+				
+				<div class="row row-2">
+					<label class="field">
+						<span class="field-label">Enter an 8-digit Password</span>
+						<div class="input-with-icon">
+							<span class="icon">
+								<img src="img/Icon Input.png" alt="icon">
+							</span>
+							<input class="text-input" name="password" type="password" placeholder="Password" minlength="8" required>
+						</div>
+					</label>
+					
+					<label class="field">
+						<span class="field-label">Confirm Password</span>
+						<div class="input-with-icon">
+							<span class="icon">
+								<img src="img/Icon Input.png" alt="icon">
+							</span>
+							<input class="text-input" name="confirmPassword" type="password" placeholder="Confirm Password" minlength="8" required>
+						</div>
+					</label>
+				</div>
+			</section>
+			
+			<!-- Bottom Controls -->
+			<div class="card-controls">
+				<!-- ✅ Fixed: No <a> tag inside button -->
+				<button type="submit" class="btn next">Next</button>
+			</div>
+		</form>
+	</main>
+	
+	<footer class="site-footer"></footer>
+</body>
+</html>

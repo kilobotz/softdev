@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>Class Record | Educator Picture Upload</title>
+	
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+	
+	<!-- Page CSS -->
+	<link rel="stylesheet" href="educator-picture-upload.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="brand">Class Records</div>
+	</header>
+
+	<main class="container">
+		<div class="content">
+			<h1 class="headline">Please take or upload a formal picture</h1>
+			<p class="subtext">This will serve as your ID picture in the class record.</p>
+
+			<!-- ✅ Updated Form: no manual idNumber -->
+			<form action="educator-picture-upload.php" method="POST" enctype="multipart/form-data" class="upload-form">
+				
+				<!-- Upload button -->
+				<div class="actions">
+					<label for="fileInput" class="btn yellow">Upload a Picture</label>
+					<input id="fileInput" type="file" name="photo" accept="image/*" required style="display:none">
+				</div>
+
+				<!-- Preview box -->
+				<aside class="preview-card" aria-hidden="true">
+					<div class="outer-square">
+						<div id="innerPreview" class="inner-square">
+							<!-- Camera icon -->
+							<svg id="cameraSvg" class="camera" xmlns="http://www.w3.org/2000/svg" width="81" height="73" viewBox="0 0 81 73" aria-hidden="true">
+								<path d="M0 0 C1.51013672 -0.04060547 1.51013672 -0.04060547 3.05078125 -0.08203125 C10.34716181 -0.01509198 10.34716181 -0.01509198 13.56420898 2.46875 C14.72547967 3.72055286 15.86113215 4.99674657 16.96630859 6.29833984 C18.51667155 8.16578653 18.51667155 8.16578653 21.59765625 8.671875 C22.57605469 8.65640625 23.55445312 8.6409375 24.5625 8.625 C29.30694578 8.77307883 32.53618298 9.00123266 36.5 11.875 C41.08688497 17.16236602 41.08774881 21.70501268 41.03125 28.53125 C41.03699036 30.06199158 41.03699036 30.06199158 41.04284668 31.62365723 C41.04556145 33.77531932 41.03823084 35.92701465 41.02148438 38.07861328 C41.00006936 41.36435817 41.0213017 44.64791654 41.046875 47.93359375 C41.04423165 50.02865064 41.03910652 52.12370617 41.03125 54.21875 C41.03934692 55.19702759 41.04744385 56.17530518 41.05578613 57.18322754 C40.97801191 62.86521813 40.53728896 66.5279274 36.5 70.875 C32.29724254 73.35994374 29.19310114 74.25401177 24.33032227 74.27905273 C22.532994 74.29807899 22.532994 74.29807899 20.69935608 74.31748962 C19.41798264 74.31455399 18.13660919 74.31161835 16.81640625 74.30859375 C15.47411333 74.31316089 14.13182275 74.31846805 12.78953552 74.32447815 C9.98288444 74.33338813 7.17651822 74.33101072 4.36987305 74.32104492 C0.78763798 74.30955949 -2.79361065 74.32976928 -6.37571621 74.35896206 C-9.14600281 74.37738093 -11.9160555 74.37702041 -14.68638802 74.37132454 C-16.64442762 74.37109828 -18.60244542 74.38794321 -20.56040955 74.40513611 C-27.36727861 74.35198441 -32.1086918 74.23064754 -37.5 69.875 C-41.56639899 65.42612565 -40.95062161 60.02074018 -40.93359375 54.31640625 C-40.9388356 53.29449692 -40.94407745 52.27258759 -40.94947815 51.2197113 C-40.95589133 49.06209215 -40.95457049 46.90443801 -40.94604492 44.74682617 C-40.93753828 41.4523264 -40.96630202 38.15956283 -40.99804688 34.86523438 C-40.99965915 32.76562552 -40.99908086 30.6660136 -40.99609375 28.56640625 C-41.00732773 27.58499161 -41.01856171 26.60357697 -41.03013611 25.59242249 C-40.97051095 19.71705651 -40.43899417 16.33302087 -36.5 11.875 C-31.42119787 8.86917833 -27.1989922 8.5685472 -21.34375 8.671875 C-18.07182053 7.75501564 -17.51717524 6.90494739 -15.375 4.3828125 C-10.86254706 -0.4396563 -6.30622426 -0.16956557 0 0 Z" fill="#FFFFFF" transform="translate(40.5,-0.875)" />
+							</svg>
+
+							<!-- Preview -->
+							<img id="previewImg" alt="Selected preview" src="" style="display:none" draggable="false">
+						</div>
+					</div>
+				</aside>
+
+				<div class="form-actions">
+					<button type="submit" class="btn yellow">Confirm Upload</button>
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<footer class="site-footer"></footer>
+
+	<!-- ✅ Live image preview script -->
+	<script>
+		const fileInput = document.getElementById('fileInput');
+		const previewImg = document.getElementById('previewImg');
+		const cameraSvg = document.getElementById('cameraSvg');
+
+		fileInput.addEventListener('change', (event) => {
+			const file = event.target.files[0];
+			if (file) {
+				const reader = new FileReader();
+				reader.onload = (e) => {
+					previewImg.src = e.target.result;
+					previewImg.style.display = 'block';
+					cameraSvg.style.display = 'none';
+				};
+				reader.readAsDataURL(file);
+			}
+		});
+	</script>
+</body>
+</html>

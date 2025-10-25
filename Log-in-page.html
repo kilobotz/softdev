@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Class Record | Login</title>
+
+	<!-- Fonts -->
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+
+	<!-- Styles -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header class="site-header">
+		<div class="brand-container">
+			<img src="Class Records system logo_20251005183505.png" alt="Logo" class="site-logo">
+			<div class="brand">Class Records</div>
+		</div>
+	</header>
+
+	<main class="login-section">
+		<!-- Left Side: Welcome -->
+		<div class="welcome">
+			<h2>Welcome to Class Records!</h2>
+			<p>Please log in to access your records.</p>
+
+			<div class="studAcc">
+				<div class="icon1">
+					<img src="student.png" alt="Student Icon">
+				</div>
+				<div class="studAcc__pill">
+					<p class="studAcc__text">Login Portal</p>
+				</div>
+			</div>
+
+			<p class="signup-text">
+				Don’t have an educator account? <a href="educator-register.html">Register here!</a>
+			</p>
+		</div>
+
+		<!-- Right Side: Login Form -->
+		<form class="login-form" action="login.php" method="post" autocomplete="off">
+			<h3 class="form-title">Login</h3>
+
+			<label for="student-id" class="field-label">ID Number</label>
+			<div class="loginicon">
+				<div class="icon"><img src="ID icon.png" alt="ID Icon" /></div>
+				<input type="text" id="student-id" name="student-id" class="text-input" placeholder="e.g. 99-9999" required>
+			</div>
+
+			<label for="student-password" class="field-label">Password</label>
+			<div class="loginicon">
+				<div class="icon"><img src="password.png" alt="Password Icon" /></div>
+				<input type="password" id="student-password" name="student-password" class="text-input" placeholder="Enter your password" required>
+			</div>
+
+			<div class="form-actions">
+				<button type="submit" class="btn next">Login</button>
+				<a href="#" class="forgot">Forgot Password?</a>
+			</div>
+		</form>
+	</main>
+
+	<footer class="site-footer"></footer>
+</body>
+</html>
